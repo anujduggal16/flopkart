@@ -52,6 +52,17 @@ $(() => {
       refreshList()
 
       $('#addproduct').click(() => {
+        if($.trim( $('#productname').val())==''){
+          window.alert("Enter Product Name")
+      }
+      else if ($.trim( $('#price').val())==''){
+        window.alert("Enter Product Price")
+      }
+
+      else if ($.trim( $('#qty').val())==''){
+        window.alert("Enter Product Quantity")
+      }
+      else{
         $.post(
           '/product',
           {
@@ -69,6 +80,8 @@ $(() => {
             }
           }
         )
+      }
+       
       })
   })
   

@@ -38,6 +38,10 @@ $(() => {
   refreshList()
 
   $('#addvendor').click(() => {
+    if($.trim( $('#vendorname').val())==''){
+      window.alert("Enter Vendor Name")
+  }
+  else{
     $.post(
       '/vendor',
       {
@@ -51,6 +55,7 @@ $(() => {
         }
       }
     )
+  }
   })
 
 })
