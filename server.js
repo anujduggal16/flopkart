@@ -162,8 +162,8 @@ app.post('/login',async (req, res) => {
     var result3={result,result2}
     res.send(result3)
   })
-
+const PORT = process.env.PORT|| 4444
 db.sync()
   .then(() => {
-    app.listen(7777)
+    app.listen(PORT)
   })
